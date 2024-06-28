@@ -1,4 +1,4 @@
-module go-presigned-post
+module github.com/yashsavalia1/go-presigned-post
 
 go 1.21.6
 
