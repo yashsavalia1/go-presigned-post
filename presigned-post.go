@@ -110,7 +110,7 @@ func createPresignedPOST(key string, creds *AwsCredentialsAndConfig, policyOpts 
 	policy := createPolicy(key, creds, policyOpts)
 	b64Policy := policy.Base64(policyOpts)
 	signature := createSignature(creds, policy.Date[:8], b64Policy)
-	postUrl := fmt.Sprintf("https://%s.s3.amazonaws.com/", policy.Bucket)
+	postUrl := fmt.Sprintf("https://s3.amazonaws.com/%s", policy.Bucket)
 
 	postFields := &PresignedPostRequestFields{
 		Key:            key,
